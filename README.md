@@ -73,7 +73,8 @@
 - belongs_to :user
 - belongs_to :content
 - belongs_to :purchase
-- belongs_to :prefecture
+- extend ActiveHash::Associations::ActiveRecordExtensions
+- belongs_to_active_hash :prefecture
 
 ## prefectures テーブル
 
@@ -84,4 +85,5 @@
 
 ### Association
 
+- include ActiveHash::Associations
 - has_many :addresses
