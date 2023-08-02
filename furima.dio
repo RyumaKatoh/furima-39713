@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="r_wIiYUznQfSqGgHpIfq" name="ページ1">
-        <mxGraphModel dx="644" dy="1020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="592" dy="1020" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -44,9 +44,6 @@
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="150" y="750" as="targetPoint"/>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="50" style="edgeStyle=none;html=1;entryX=0.007;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="12" target="8">
-                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="80" y="300" width="140" height="270" as="geometry"/>
