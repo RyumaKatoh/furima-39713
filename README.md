@@ -2,14 +2,14 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| name_kanji         | string | null: false |
-| name_kana          | string | null: false |
-| birthday           | string | null: false |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: false |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| name_kanji         | string  | null: false |
+| name_kana          | string  | null: false |
+| birthday           | date    | null: false |
 
 ### Association
 
@@ -28,8 +28,8 @@
 | delivery        | string     | null: false                    |
 | region          | string     | null: false                    |
 | number_of_days  | string     | null: false                    |
-| price           | string     | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| price           | integer    | null: false                    |
+| user_id         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -45,7 +45,9 @@
 | credit_limit    | integer    | null: false                    |
 | credit_security | integer    | null: false                    |
 | phone_number    | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| user_id         | integer    | null: false, foreign_key: true |
+| content_id      | integer    | null: false, foreign_key: true |
+| address_id      | integer    | null: false, foreign_key: true |
 
 ### Association
 
@@ -55,17 +57,40 @@
 
 ## addresses テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| post_code  | integer    | null: false                    |
-| prefecture | string     | null: false                    |
-| city       | string     | null: false                    |
-| address    | string     | null: false                    |
-| building   | string     |                                |
-| user       | references | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| post_code       | integer    | null: false                    |
+| city            | string     | null: false                    |
+| address         | string     | null: false                    |
+| building        | string     |                                |
+| user_id         | integer    | null: false, foreign_key: true |
+| content_id      | integer    | null: false, foreign_key: true |
+| purchase_id     | integer    | null: false, foreign_key: true |
+| prefecture_id   | integer    | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :content
 - belongs_to :purchase
+- belongs_to :prefecture
+
+## prefectures テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| post_code       | integer    | null: false                    |
+| prefecture      | string     | null: false                    |
+| city            | string     | null: false                    |
+| address         | string     | null: false                    |
+| building        | string     |                                |
+| user_id         | integer    | null: false, foreign_key: true |
+| content_id      | integer    | null: false, foreign_key: true |
+| purchase_id     | integer    | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :content
+- belongs_to :purchase
+- belongs_to :address
