@@ -79,18 +79,9 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| post_code       | integer    | null: false                    |
-| prefecture      | string     | null: false                    |
-| city            | string     | null: false                    |
-| address         | string     | null: false                    |
-| building        | string     |                                |
-| user_id         | integer    | null: false, foreign_key: true |
-| content_id      | integer    | null: false, foreign_key: true |
-| purchase_id     | integer    | null: false, foreign_key: true |
+| id              | integer    | null: false                    |
+| name            | integer    | null: false                    |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :content
-- belongs_to :purchase
-- belongs_to :address
+- has_many :addresses
