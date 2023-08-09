@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :purchases
 
+  validates :nickname, presence: true
   # ユーザー名（漢字）は必須であることをバリデーション
   validates :last_name_kanji, presence: true
   validates :first_name_kanji, presence: true
