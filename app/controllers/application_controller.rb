@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :basic_path
   before_action :configure_permitted_parameters, only: [:create], if: :devise_controller?
-  before_action :authenticate_user!, only: [:new]
-
 
   private
   def basic_path
