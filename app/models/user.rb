@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :items
+  # has_many :items
   # has_many :purchases
 
   # バリデーション設定
@@ -28,6 +28,9 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' 
   
+  # 全角文字を含むパスワードでは登録できない
+  PASSWORD_REGEX = /\A[a-zA-Z\d]+\z/.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. The password cannot contain full-width characters.' 
 end
 
 
