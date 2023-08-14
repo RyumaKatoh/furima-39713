@@ -13,7 +13,7 @@ RSpec.describe Item, type: :model do
     end
     context '出品登録できないとき' do
       it 'imageが空では登録できない' do
-        @item.image = ''
+        @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
@@ -62,10 +62,15 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price should be a half-width number")
       end
-      it 'priceが300~9999999の間でなければ登録できない' do
+      it 'priceが299以下だと登録できない' do
         @item.price = 250
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be less than 300, greater than 9999999")
+        expect(@item.errors.full_messages).to include("Price can't be less than 300")
+      end
+      it 'priceが9999999以上だと登録できない' do
+        @item.price = 100000000
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price can't be greater than 9999999")
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil

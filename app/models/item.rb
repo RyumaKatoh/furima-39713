@@ -24,7 +24,8 @@ validates :delivery_burden_id, numericality: { other_than: 1, message: "can't be
 validates :prefecture_id, numericality: { other_than: 1, message: "can't be black" }
 validates :shipping_duration_id, numericality: { other_than: 1, message: "can't be black" }
 
-validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message:"can't be less than 300, greater than 9999999" }
+validates :price, numericality: { greater_than_or_equal_to: 300, message:"can't be less than 300" }
+validates :price, numericality: { less_than_or_equal_to: 9999999, message:"can't be greater than 9999999" }
   # 半角数値のみを許可
 validates :price, numericality: { only_integer: true, message: "should be a half-width number" }
 
