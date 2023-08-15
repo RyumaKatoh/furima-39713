@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update,]
+  # :destory
 
   def index
     @items = Item.includes(:user).order(created_at: :desc)
-    # @item = Item.find(params[:id])
   end  
 
   def new
@@ -39,13 +39,14 @@ class ItemsController < ApplicationController
     end 
   end  
 
-  def destroy
-    if @item.destroy
-      redirect_to root_path
-    else
-      redirect_to item_path(@item.id)
-    end
-  end  
+  # def destroy
+  #   if user_signed_in? && current_user == prototype.user
+  #     @item.destroy
+  #     redirect_to root_path
+  #   else
+  #     redirect_to item_path(@item.id)
+  #   end    
+  # end
 
   private
   def item_params
