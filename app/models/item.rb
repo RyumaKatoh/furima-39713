@@ -12,10 +12,12 @@ class Item < ApplicationRecord
 
 
 #空の投稿を保存できないようにする
-validates :image, presence: true
-validates :name, presence: true
-validates :item_detail, presence: true
-validates :price, presence: true
+with_options presence: true do
+  validates :image
+  validates :name
+  validates :item_detail
+  validates :price
+end
 
 #ジャンルの選択が「---」の時は保存できないようにする
 validates :category_id, numericality: { other_than: 1, message: "can't be black" }
