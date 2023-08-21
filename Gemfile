@@ -89,6 +89,5 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'rails-i18n'
 gem 'payjp'
-gem 'pg'
 gem 'gon'
 gem "aws-sdk-s3", require: false
