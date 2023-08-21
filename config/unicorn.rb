@@ -18,4 +18,3 @@ stderr_path "#{app_path}/shared/log/unicorn.stderr.log"  # 「shared」の中を
 
 #通常のログを記録するファイルを指定
 stdout_path "#{app_path}/shared/log/unicorn.stdout.log"  # 「shared」の中を参照するよう変更
-（省略）
